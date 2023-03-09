@@ -5,6 +5,13 @@
  */
 package pbo2_2101092021;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import sonya.dao.Koneksi;
+
 /**
  *
  * @author SONYA HASNA HAFIZAH
@@ -14,8 +21,17 @@ public class PBO2_2101092021 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws ClassNotFoundException {
+        try {
+            Koneksi koneksi = new Koneksi();
+            Connection con = koneksi.getKoneksi();
+            JOptionPane.showMessageDialog(null, "Koneksi Ok");
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null, "Error :"+ ex.getMessage());
+            Logger.getLogger(PBO2_2101092021.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }
     
 }
