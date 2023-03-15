@@ -10,7 +10,7 @@ package sonya.model;
  * @author SONYA HASNA HAFIZAH
  */
 public class Anggota {
-    private String kodeanggota;
+    private String kodeAnggota;
     private String namaAnggota;
     private String alamat;
     private String jenisKelamin;
@@ -19,22 +19,19 @@ public class Anggota {
         
     }
 
-    public Anggota(String kodeanggota, String namaAnggota, String alamat, String jenisKelamin) {
-        this.kodeanggota = kodeanggota;
+    public Anggota(String kodeAnggota, String namaAnggota, String alamat, String jenisKelamin) {
+        this.kodeAnggota = kodeAnggota;
         this.namaAnggota = namaAnggota;
         this.alamat = alamat;
         this.jenisKelamin = jenisKelamin;
     }
-    
-    
-    public String getKodeanggota() {
-        return kodeanggota;
-    }
-    
-    
 
-    public void setKodeanggota(String kodeanggota) {
-        this.kodeanggota = kodeanggota;
+    public String getKodeAnggota() {
+        return kodeAnggota;
+    }
+
+    public void setKodeAnggota(String kodeAnggota) {
+        this.kodeAnggota = kodeAnggota;
     }
 
     public String getNamaAnggota() {
@@ -60,6 +57,9 @@ public class Anggota {
     public void setJenisKelamin(String jenisKelamin) {
         this.jenisKelamin = jenisKelamin;
     }
+    
+    
+    
     
     
 }
