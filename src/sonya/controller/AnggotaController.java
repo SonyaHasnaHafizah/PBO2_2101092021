@@ -35,6 +35,7 @@ public class AnggotaController {
     public void bersihForm(){
         formAnggota.getTxtKodeAnggota().setText("");
         formAnggota.getTxtNamaAnggota().setText("");
+        formAnggota.getTxtAlamat().setText("");
         
         
         
@@ -46,4 +47,5 @@ public class AnggotaController {
             formAnggota.getCboJenisKelamin().addItem("P");
             
         }
+    
 }
