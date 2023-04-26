@@ -20,7 +20,7 @@ public   class AnggotaDaoImpl implements AnggotaDao {
 
     @Override
     public void insert( Connection con,Anggota anggota) throws Exception {
-        String sql = "Insert into anggota values (?,?,?,?,)";
+        String sql = "Insert into anggota values (?,?,?,?)";
         PreparedStatement ps= con.prepareStatement(sql);
         ps.setString(1,anggota.getKodeanggota());
         ps.setString(2,anggota.getNamaanggota());
@@ -73,12 +73,13 @@ public   class AnggotaDaoImpl implements AnggotaDao {
         ResultSet rs = ps.executeQuery ();
         List<Anggota> list = new ArrayList<> ();
         Anggota anggota= null;
-        if (rs.next ()){
+        while (rs.next ()){
             anggota = new Anggota();
             anggota.setKodeanggota(rs.getString(1));
             anggota.setNamaanggota(rs.getString(2));
             anggota.setAlamat(rs.getString(3));
             anggota.setJeniskelamin(rs.getString(4));
+            list.add(anggota);
         }
         return list;
        
