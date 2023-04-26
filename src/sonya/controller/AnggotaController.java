@@ -68,13 +68,10 @@ public class AnggotaController {
         
         try {
             anggota = new Anggota();
-            anggota.setKodeAnggota(formAnggota.getTxtKodeAnggota().getText());
-            anggota.setNamaAnggota(
-                    formAnggota.getTxtNamaAnggota().getText());
-            anggota.setAlamat(
-                    formAnggota.getTxtAlamat().getText());
-            anggota.setJeniskelamin (
-                    formAnggota.getCboJenisKelamin().getSelectedItem().toString());
+            anggota.setKodeanggota(formAnggota.getTxtKodeAnggota().getText());
+            anggota.setNamaanggota(formAnggota.getTxtNamaAnggota().getText());
+            anggota.setAlamat(formAnggota.getTxtAlamat().getText());
+            anggota.setJeniskelamin (formAnggota.getCboJenisKelamin().getSelectedItem().toString());
             dao.insert(con,anggota);
             JOptionPane.showMessageDialog(formAnggota, "Entri Ok");
             
@@ -143,8 +140,9 @@ public class AnggotaController {
             List<Anggota> list= dao.getAllAnggota(con);
             for (Anggota anggota1 : list){
                 Object[] row= {
-                    anggota1.getKodeAnggota(),
+                    anggota1.getKodeanggota(),
                     anggota1.getNamaanggota(),
+                    anggota1.getAlamat(),
                     anggota1.getJeniskelamin()
                 };
                 tabel.addRow(row);
