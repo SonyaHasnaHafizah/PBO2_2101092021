@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import sonya.controller.AnggotaController;
 
 /**
  *
@@ -19,8 +20,13 @@ public class FormAnggota extends javax.swing.JFrame {
     /**
      * Creates new form FormAnggota
      */
+    AnggotaController controller;
     public FormAnggota() {
         initComponents();
+        controller = new AnggotaController(this);
+        controller.clearForm();
+        controller.isiCboJenisKelamin();
+        controller.tampil();
     }
 
     public JComboBox<String> getCboJenisKelamin() {
@@ -107,6 +113,11 @@ public class FormAnggota extends javax.swing.JFrame {
         jLabel4.setBounds(30, 140, 110, 20);
 
         btnInsert.setText("Insert");
+        btnInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnInsert);
         btnInsert.setBounds(30, 190, 73, 29);
 
@@ -118,7 +129,7 @@ public class FormAnggota extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "kodeAnggota", "namaAnggota", "alamat", "jenisKelamin"
             }
         ));
         jScrollPane1.setViewportView(tblAnggota);
@@ -155,12 +166,19 @@ public class FormAnggota extends javax.swing.JFrame {
         getContentPane().add(btnCari);
         btnCari.setBounds(630, 30, 61, 29);
 
-        pack();
+        setSize(new java.awt.Dimension(757, 676));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+        controller.insert();
+        controller.clearForm();
+        controller.tampil();
+    }//GEN-LAST:event_btnInsertActionPerformed
 
     /**
      * @param args the command line arguments
