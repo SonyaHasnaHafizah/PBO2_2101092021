@@ -25,8 +25,6 @@ public class Anggota {
         this.alamat = alamat;
         this.jeniskelamin = jeniskelamin;
     }
-    
-    
 
     public String getKodeanggota() {
         return kodeanggota;
@@ -59,19 +57,7 @@ public class Anggota {
     public void setJeniskelamin(String jeniskelamin) {
         this.jeniskelamin = jeniskelamin;
     }
-
-    public void setKodeAnggota(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setNamaAnggota(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getKodeAnggota() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     
-    
+
 }
