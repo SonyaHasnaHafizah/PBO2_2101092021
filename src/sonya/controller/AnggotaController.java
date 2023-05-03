@@ -84,8 +84,6 @@ public class AnggotaController {
      }
         
         public void update(){
-       
-
         try {
             anggota = new Anggota();
             anggota.setKodeanggota(formAnggota.getTxtKodeAnggota().getText());
@@ -100,9 +98,7 @@ public class AnggotaController {
         } catch (Exception ex) {
             Logger.getLogger(AnggotaController.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
-        
-    }
+        }
     
      public void delete(){
      
