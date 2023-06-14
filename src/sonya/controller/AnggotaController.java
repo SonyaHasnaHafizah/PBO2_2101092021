@@ -44,9 +44,7 @@ public class AnggotaController {
         } catch (SQLException ex) {
             Logger.getLogger(AnggotaController.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
-  
-        
+      
     }
     
     public void clearForm(){
