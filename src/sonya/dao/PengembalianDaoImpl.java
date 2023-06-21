@@ -7,6 +7,7 @@ package sonya.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 import sonya.model.Pengembalian;
 
@@ -47,6 +48,20 @@ public class PengembalianDaoImpl implements PengembalianDao{
     @Override
     public List<Pengembalian> getAllPengembalian(Connection con) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public double getSelisihTanggal(Connection con, String tgl1, String tgl2) throws Exception {
+        int hasil=0;
+        String sql = "select datediff(?,?)";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, tgl1);
+        ps.setString(2, tgl2);
+        ResultSet rs = ps.executeQuery();
+        if(rs.next()){
+            hasil = rs.getInt(1);
+        }
+        return hasil;
     }
     
 }
