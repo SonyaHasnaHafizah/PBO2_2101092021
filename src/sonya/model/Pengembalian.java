@@ -55,6 +55,9 @@ public class Pengembalian {
     }
 
     public String getTgldikembalikan() {
+        SimpleDataFormat s = new SimpleDateFormat("yyyy-MM-dd");
+        Date tgl = new Date();
+        tgldikembalikan = s.format(tgl);
         return tgldikembalikan;
     }
 
