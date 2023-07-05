@@ -186,7 +186,7 @@ public class FormAnggota extends javax.swing.JFrame {
         getContentPane().add(btnCari);
         btnCari.setBounds(630, 30, 61, 29);
 
-        setSize(new java.awt.Dimension(757, 676));
+        setSize(new java.awt.Dimension(761, 676));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
