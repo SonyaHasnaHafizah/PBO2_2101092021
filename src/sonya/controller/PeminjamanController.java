@@ -101,6 +101,7 @@ public class PeminjamanController {
                 formPeminjaman.getCboKodebuku().setSelectedItem(peminjaman.getKodebuku());
                 formPeminjaman.getTxtTglpinjam().setText(peminjaman.getTglpinjam());
                 formPeminjaman.getTxtTglkembali().setText(peminjaman.getTglkembali());
+                //int terlambat = peminjamanDao.getSelisihTanggal(con, "2023-01-03","2023-01-01");
             }
         } catch (Exception ex) {
             Logger.getLogger(PeminjamanController.class.getName()).log(Level.SEVERE, null, ex);
@@ -121,21 +122,6 @@ public class PeminjamanController {
             Logger.getLogger(PeminjamanController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    /*public void update(){
-        try {
-            peminjaman.setKodeanggota(formPeminjaman.getCboKodeanggota()
-                    .getSelectedItem().toString().split("-")[0]);
-            peminjaman.setKodebuku(formPeminjaman.getCboKodebuku().getSelectedItem().toString());
-            peminjaman.setTglpinjam(formPeminjaman.getTxtTglPinjam().getText());
-            peminjaman.setTglkembali(formPeminjaman.getTxtTglKembali().getText());
-            peminjamanDao.update(connection, peminjaman);
-            JOptionPane.showMessageDialog(formPeminjaman, "Update Data Ok");
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(formPeminjaman, ex.getMessage());
-            Logger.getLogger(PeminjamanController.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-    }*/
     
     public void delete(){
         try {
