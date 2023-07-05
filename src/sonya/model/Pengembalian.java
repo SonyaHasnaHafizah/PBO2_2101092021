@@ -5,6 +5,11 @@
  */
 package sonya.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.sql.Connection;
+import sonya.model.Peminjaman;
+
 /**
  *
  * @author Axioo
@@ -54,8 +59,8 @@ public class Pengembalian {
         this.tglpinjam = tglpinjam;
     }
 
-    public String getTgldikembalikan() {
-        SimpleDataFormat s = new SimpleDateFormat("yyyy-MM-dd");
+     public String getTgldikembalikan(){
+        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
         Date tgl = new Date();
         tgldikembalikan = s.format(tgl);
         return tgldikembalikan;
@@ -73,13 +78,15 @@ public class Pengembalian {
         this.terlambat = terlambat;
     }
 
-    public double getDenda() {
+     public double getDenda() {
+        denda = terlambat * 1000;
         return denda;
     }
-
+    
     public void setDenda(double denda) {
         this.denda = denda;
     }
+    
     
     
     
